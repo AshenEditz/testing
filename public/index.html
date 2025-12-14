@@ -1,30 +1,33 @@
+<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Queen Selina | WhatsApp Bot SaaS</title>
+    <title>Queen Selina | Bot SaaS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="nav">
         <h2>Queen Selina💞</h2>
-        <button onclick="toggleAdmin()">Admin Panel</button>
+        <button onclick="openAdmin()">Admin Panel</button>
     </div>
 
     <div class="hero">
         <img src="https://i.imgur.com/rm1qWjR.jpeg" class="avatar">
         <h1>Create Your Own WhatsApp Bot</h1>
-        <p>Auto React | AI Chat | 24/7 Online | No Watermark (Premium)</p>
+        <p>Auto React | AI Chat | 24/7 Online | Multi-Device</p>
         
         <div class="pair-box">
-            <p>Enter Mobile Number (With Country Code)</p>
+            <p>Enter Mobile Number (With Country Code e.g. 947...)</p>
             <input type="number" id="phone" placeholder="94768738555">
             <button onclick="getCode()" id="btnAction">Get Pairing Code</button>
+            
             <div id="codeArea" class="hidden">
-                <h2 id="code"></h2>
-                <p>Go to WhatsApp > Linked Devices > Link with Phone Number</p>
+                <p>Your Pairing Code:</p>
+                <h2 id="code">LOADING...</h2>
+                <p style="color: #ccc; font-size: 12px;">Go to WhatsApp > Linked Devices > Link with Phone Number</p>
             </div>
         </div>
     </div>
@@ -34,34 +37,45 @@
             <h3>Free Tier</h3>
             <h1>Rs 0</h1>
             <p>1 Bot Instance</p>
-            <p>Standard Speed</p>
             <p>Auto React ON</p>
+            <p>Watermark ON</p>
         </div>
         <div class="card premium">
             <h3>Premium</h3>
             <h1>Rs 50</h1>
             <p>Unlimited Bots</p>
-            <p>Prioritized Speed</p>
-            <p>Full API Access</p>
-            <button>Buy Now</button>
+            <p>24/7 Priority</p>
+            <p>No Watermark</p>
+            <button onclick="window.location.href='https://wa.me/94768738555'">Buy Now</button>
         </div>
     </div>
 
-    <!-- Admin Modal -->
+    <!-- ADMIN MODAL -->
     <div id="adminPanel" class="hidden modal">
         <div class="modal-box">
-            <h3>Developer Login</h3>
-            <input type="email" id="admEmail" placeholder="Email">
-            <input type="password" id="admPass" placeholder="Password">
-            <button onclick="adminLogin()">Login</button>
-            <hr>
-            <p>Active Bots: <span id="botCount">0</span></p>
-            <textarea id="broadcastTxt" placeholder="Message all bots..."></textarea>
-            <button onclick="sendBroadcast()" class="red">Broadcast</button>
-            <button onclick="toggleAdmin()">Close</button>
+            
+            <!-- Login View -->
+            <div id="loginForm">
+                <h3>👑 Admin Login</h3>
+                <input type="email" id="admEmail" placeholder="ashen.editz@gmail.com">
+                <input type="password" id="admPass" placeholder="Password">
+                <button onclick="adminLogin()">Login</button>
+            </div>
+
+            <!-- Dashboard View (Hidden until Login) -->
+            <div id="dashboard" class="hidden">
+                <h3>Control Panel</h3>
+                <p>Active Bots: <span id="botCount">0</span></p>
+                <hr style="border-color: #444;">
+                <textarea id="broadcastTxt" placeholder="Type message to broadcast to ALL groups..."></textarea>
+                <button onclick="sendBroadcast()" class="red-btn">📢 Broadcast</button>
+            </div>
+
+            <br>
+            <button onclick="closeAdmin()" class="close-btn">Close Panel</button>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
-          </html>
+    </html>
