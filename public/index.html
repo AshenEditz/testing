@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queen Selina | WhatsApp Bot SaaS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="nav">
+        <h2>Queen Selina💞</h2>
+        <button onclick="toggleAdmin()">Admin Panel</button>
+    </div>
+
+    <div class="hero">
+        <img src="https://i.imgur.com/rm1qWjR.jpeg" class="avatar">
+        <h1>Create Your Own WhatsApp Bot</h1>
+        <p>Auto React | AI Chat | 24/7 Online | No Watermark (Premium)</p>
+        
+        <div class="pair-box">
+            <p>Enter Mobile Number (With Country Code)</p>
+            <input type="number" id="phone" placeholder="94768738555">
+            <button onclick="getCode()" id="btnAction">Get Pairing Code</button>
+            <div id="codeArea" class="hidden">
+                <h2 id="code"></h2>
+                <p>Go to WhatsApp > Linked Devices > Link with Phone Number</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing">
+        <div class="card">
+            <h3>Free Tier</h3>
+            <h1>Rs 0</h1>
+            <p>1 Bot Instance</p>
+            <p>Standard Speed</p>
+            <p>Auto React ON</p>
+        </div>
+        <div class="card premium">
+            <h3>Premium</h3>
+            <h1>Rs 50</h1>
+            <p>Unlimited Bots</p>
+            <p>Prioritized Speed</p>
+            <p>Full API Access</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+    <!-- Admin Modal -->
+    <div id="adminPanel" class="hidden modal">
+        <div class="modal-box">
+            <h3>Developer Login</h3>
+            <input type="email" id="admEmail" placeholder="Email">
+            <input type="password" id="admPass" placeholder="Password">
+            <button onclick="adminLogin()">Login</button>
+            <hr>
+            <p>Active Bots: <span id="botCount">0</span></p>
+            <textarea id="broadcastTxt" placeholder="Message all bots..."></textarea>
+            <button onclick="sendBroadcast()" class="red">Broadcast</button>
+            <button onclick="toggleAdmin()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+          </html>
